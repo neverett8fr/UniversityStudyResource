@@ -290,6 +290,107 @@
     <p/>
     <p/>- An idea of structograms (Nassi/Shneiderman diagrams) as a first step to develop structured code
     <p/>- Flow Diagrams - as an alternative to structograms that, however, does not support structured programming
+    <p/>
+    <p/>
+    <p/>
+    <p/>-------------------------------
+    <p/>- Memory
+    <p/>
+    <p/>- Number types and their representation
+    <p/>- Strong and weekly typed programming languages
+    <p/>- arrays, collections and their representations
+    <p/>
+    <p/>- values, addresses, references, and pointers
+    <p/>
+    <p/>
+    <p/>- Fixed point numbers
+    <p/>-- approximation of real numbers with fixed number of digits after the decimal point
+    <p/>-- 1.234, 890.32, -12, etc.
+    <p/>-- can speed up mathematical calculations; especially on machines without floating point unit - old / handheld
+    <p/>-- Not explicity supported by c#
+    <p/>
+    <p/>- Floating point number
+    <p/>-- another representation of real numbers
+    <p/>-- significant digit x base ^ exponent
+    <p/>-- -1.245 x 10 ^ 32, 0,123 x 2 ^ 123, 123.4 x 10 ^ -10, etc.
+    <p/>-- can cover a much larger range than fixed-points
+    <p/>-- need more storage ; are potentially less precise (cant exactly get number, half, quarter, eighth, etc.)
+    <p/>-- need rescaling of the exponent
+    <p/>-- are supported by floating point units
+    <p/>
+    <p/>-- Floating Point types
+    <p/>--- single = 24 bit precision = 32 bits = 8 exponent
+    <p/>--- double = 53 bit precision = 64 bits = 11 exponent
+    <p/>
+    <p/>- Implicit and Explicit Conversions*
+    <p/>-- implicit conversions = change types or values according to rules built-in to a programming language / run-time environment
+    <p/>-- explicit conversions = use keywords to specifically request conversions
+    <p/>-- conversions cost time
+    <p/>
+    <p/>
+    <p/>- Arrays
+    <p/>-- Integer array in memory - byte order can differ
+    <p/>--- a[0], a[1], a[2] -- a[0] = most significant byte, a[2] = least significant byte
+    <p/>--- e.g. 1000 change to 1001 not much of a change, but change to 2000 then big change
+    <p/>-- Array Representation
+    <p/>--- Array elements all have the same size in memory; the size of their basic type
+    <p/>--- elements are typically consecutively laid out in memory starting at some location, with higher indexed elements at higher memory locations
+    <p/>-- Higher-Dimensional arrays?**?
+    <p/>--- Data stored linearly in memory: elements with the most right index are stored first them the next dimension to the left, and so on
+    <p/>--- e.g. for a two-dimensional array the first row is stored first, then the second, and so on.
+    <p/>--- e.g. array[,] arrayName = new array[2,3];
+    <p/>-- String arrays ****????
+    <p/>--- they are still the same size, they hold references to string, not the actual string
+    <p/>--- the array stores fixed size "references" to the strings
+    <p/>
+    <p/>
+    <p/>
+    <p/>
+    <p/>- CPUs can load linear memory segments quickly
+    <p/>- The CPU cache allows very fast operation
+    <p/>- Badly aligned data can cost a factor of 10 in speed
+    <p/>
+    <p/>- ?**Struct (in C)**? - i assume like VB??
+    <p/>- **Look difference between structure and a class** one public obviously, etc.
+    <p/>-- *Classes don't contain methods of classes?* maybe??
+    <p/>-- struct - define variables e.g. record = firstName && lastName && age, etc.
+    <p/>--- class might have a method to return?? lookup to know for certain
+    <p/>--- differences between structures and classes --> see modules about object oriented programming (oop)
+    <p/>--- Classes more complicated - they can have methods, etc.
+    <p/>--- https://pediaa.com/what-is-the-difference-between-class-and-structure/
+    <p/>
+    <p/>-- ??**enum types*** List of tags
+    <p/>-- ??**unions*** access the same memory as different types
+    <p/>
+    <p/>-- Dealing directly with the physical addresses when changing memory is considered unsafe
+    <p/>-- Preferable to change the variable, etc.
+    <p/>-- The address operator "&" applied to a varible returns its "physical" address
+    <p/>--- e.g. x = 235 creates a variable with value 235
+    <p/>--- e.g. *px = &x pointer to int is set to addr. of x
+    <p/>--- the address is "deferenced" using the "*" operator; this returns the value at the target address
+    <p/>---- * px = 22; reset x from 235 to 22
+    <p/>
+    <p/>--??**Unsafe Void**??
+    <p/>
+    <p/>
+    <p/>
+    <p/>-------------
+    <p/>
+    <p/>- Iteration and Recursion
+    <p/>
+    <p/>- Recursion is a way to define objects, equations, funcitions, etc. that refer to themselves - this can lead to very natural and appealing algorithms for some problems
+    <p/>
+    <p/>- Loops, arrays, linear search, iterative binary searach, recursion, recursive binary search, towers of hanoi??
+    <p/>
+    <p/>- Linear Search
+    <p/>-- go through array start at 0 and check each element against search value, if found return "true"
+    <p/>
+    <p/>- binary search
+    <p/>-- needs on average n/2 iterations and n in the worse case
+    <p/>-- if we know the array is sorted we can be quicker
+    <p/>-- open dictionary in middle, if word is same then word found, if smaller look at midpoint of left half, if larger look at midpoint of right half, repeat until found
+    <p/>-- e.g. guess number x = 20 -- guess 50, no smaller -- guess 25, no smaller -- guess 13, no bigger -- guess 20, yes thats right
+
 
 
 
