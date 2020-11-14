@@ -19,13 +19,15 @@
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
                 document.getElementById("dataTag").innerHTML = myObj.responseText;
+
             }
         };
 
 
         request.open("GET", "https://visual.parliament.uk/research/visualisations/coronavirus-restrictions-map/commonslibrary-coronavirus-restrictions-data.csv", true);
 
-        request.setRequestHeader('Access-Control-Allow-Origin', "*");
+
+        request.setRequestHeader("Access-Control-Allow-Origin", "4");
 
 
         request.send();
