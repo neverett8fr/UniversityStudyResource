@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Covid Data</title>
+    <p>
+        data:
+    <p>
+    https://visual.parliament.uk/research/visualisations/coronavirus-restrictions-map/commonslibrary-coronavirus-restrictions-data.csv
+    </p>
+    </p>
+
+    <p id="dataTag"></p>
+
+    <script type="http" src="getCovidCSV.http"></script>
+    <script >
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("dataTag").innerHTML = myObj.responseText;
+            }
+        };
+
+
+        request.open("GET", "https://visual.parliament.uk/research/visualisations/coronavirus-restrictions-map/commonslibrary-coronavirus-restrictions-data.csv", true);
+
+        request.setRequestHeader('Access-Control-Allow-Origin', "");
+        request.send();
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
