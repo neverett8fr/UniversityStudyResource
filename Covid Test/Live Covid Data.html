@@ -27,7 +27,7 @@
         request.open("GET", "https://visual.parliament.uk/research/visualisations/coronavirus-restrictions-map/commonslibrary-coronavirus-restrictions-data.csv", true);
 
 
-        request.setRequestHeader("access-control-allow-origin", "GitHub.com");
+        request.setRequestHeader("access-control-request-origin", "*");
 
 
         request.send();
